@@ -1,1 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
+
+@theme {
+  --custom-blue: #0d3b66;
+  --custom-white: #faf0ca;
+  --font-sans: "Roboto", sans-serif;
+  --color-background: #272727;
+  --color-foreground: #f9f6f0;
+  --color-muted: #a1a1a1;
+  --color-border: #27272a;
+  --color-card: #f9f6f0;
+  --color-accent: #a4d8ff;
+  --color-cream: #f9f6f0;
+  --color-charcol: #1c1917;
+  --color-navy: var(--custom-blue);
+  --color-chiffon: var(--custom-white);
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  .signup {
+    @apply min-h-screen flex items-center justify-center;
+  }
+}
+
+/*css reset*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}

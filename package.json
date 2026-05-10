@@ -12,6 +12,7 @@
     "db:push": "drizzle-kit push"
   },
   "dependencies": {
+    "@better-auth/client": "0.0.2-alpha.3",
     "@neondatabase/serverless": "^1.1.0",
     "better-auth": "^1.6.9",
     "dotenv": "^17.4.2",
