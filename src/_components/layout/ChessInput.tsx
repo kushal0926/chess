@@ -3,11 +3,17 @@
 import { useState } from "react";
 import { Input } from "../ui/Input";
 import { Button } from "../ui/Button";
+import { ChessComGame } from "@/types";
 
-export default function ChessInput() {
+type Props = {
+  onGameSelect: (game: ChessComGame) => void;
+};
+
+export default function ChessInput({ onGameSelect }: Props) {
   const [username, setUsername] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [games, setGames] = useState<ChessComGame[]>([]);
 
   async function handleFetchData() {
     if (!username.trim()) return;
@@ -15,6 +21,17 @@ export default function ChessInput() {
     setError("");
 
     // todo:fetching data in future here
+    const response = await fetch(`/api/games?username=${username}`);
+    const data = await response.json();
+
+    if (!response.ok) {
+      setError(data.error ?? "Something went wrong");
+      setLoading(false);
+      return;
+    }
+
+    setGames(data.games);
+    setLoading(false);
   }
 
   return (
@@ -33,6 +50,25 @@ export default function ChessInput() {
         </Button>
       </div>
       {error && <p className="text-red-500 text-sm">{error}</p>}
+
+      {games.length > 0 && (
+        <div className="flex flex-col gap-2">
+          {games.map((game, i) => (
+            <div
+              key={i}
+              onClick={() => onGameSelect(game)}
+              className="border border-cream/10 rounded p-3 hover:bg-[#262626] cursor-pointer text-cream"
+            >
+              <p className="font-bold">
+                {game.white.username} vs {game.black.username}
+              </p>
+              <p className="text-sm text-gray-600">
+                {game.white.rating} - {game.black.rating}
+              </p>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }

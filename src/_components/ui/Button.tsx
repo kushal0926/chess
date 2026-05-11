@@ -14,7 +14,8 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       "inline-flex items-center justify-center font-bold transition-colors rounded disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer";
 
     const variants = {
-      primary: "bg-foreground text-background hover:bg-chiffon",
+      primary:
+        "bg-foreground text-background hover:bg-[#262626] hover:text-cream",
       secondary:
         "border border-border bg-chiffon hover:bg-navy text-navy hover:text-chiffon",
       ghost: "text-chiffon hover:text-foreground",
