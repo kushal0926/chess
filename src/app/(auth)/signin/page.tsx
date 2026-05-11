@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { signIn } from "@/lib/auth/client";
 import { Button } from "@/_components/ui/Button";
 import { Input } from "@/_components/ui/Input";
+import Logo from "@/_components/layout/Logo";
 
 export default function SignIn() {
   const router = useRouter();
@@ -35,6 +36,7 @@ export default function SignIn() {
   return (
     <div className="min-h-screen flex items-center justify-center">
       <div className="w-full max-w-md p-8 flex flex-col gap-6">
+        <Logo />
         <h1 className="text-2xl ">Welcome back</h1>
 
         {error && <p className="text-red-500 text-sm">{error}</p>}

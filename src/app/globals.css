@@ -5,7 +5,7 @@
   --custom-blue: #0d3b66;
   --custom-white: #faf0ca;
   --font-sans: "Roboto", sans-serif;
-  --color-background: #272727;
+  --color-background: #121212;
   --color-foreground: #f9f6f0;
   --color-muted: #a1a1a1;
   --color-border: #27272a;
@@ -33,6 +33,14 @@
 }
 
 @layer components {
+  .home {
+    @apply min-h-screen max-w-6xl mx-auto p-8;
+  }
+
+  .logo {
+    @apply flex justify-center items-center gap-1;
+  }
+
   .signup {
     @apply min-h-screen flex items-center justify-center;
   }

@@ -1,5 +1,6 @@
 "use client";
 
+import Logo from "@/_components/layout/Logo";
 import { Button } from "@/_components/ui/Button";
 import { Input } from "@/_components/ui/Input";
 import { signUp } from "@/lib/auth/client";
@@ -37,6 +38,7 @@ export default function SignUp() {
   return (
     <section className="signup">
       <div className="w-full max-w-md p-8 flex flex-col gap-6">
+        <Logo />
         <h1 className="text-2xl ">Create an account</h1>
 
         {error && <p className="text-red-500 text-sm">{error}</p>}
