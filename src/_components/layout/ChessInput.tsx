@@ -35,7 +35,7 @@ export default function ChessInput({ onGameSelect }: Props) {
   }
 
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col gap-2 items-center lg:items-start">
       <h2>Fetch your id form chess.com</h2>
       <div className="flex gap-2">
         <Input

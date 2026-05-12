@@ -8,8 +8,8 @@ export default function Logo() {
         <Image
           src="/chess_logo.png"
           alt="logo for the chess analysis"
-          width={60}
-          height={60}
+          width={40}
+          height={50}
           className="cursor-pointer"
         />
       </Link>
