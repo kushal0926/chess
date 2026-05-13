@@ -1,4 +1,5 @@
 "use client";
+import AiChat from "@/_components/layout/AIChat";
 import ChessBoard from "@/_components/layout/ChessBoard";
 import ChessInput from "@/_components/layout/ChessInput";
 import Sidebar from "@/_components/layout/Sidebar";
@@ -29,6 +30,13 @@ export default function Home() {
             <ChessBoard key={selectedGame?.url} game={selectedGame} />
           </div>
         </div>
+
+        {/* right - ai chat panel */}
+        {activePanel === "ai" && (
+          <div className="lg:w-80 border-l border-cream/10 flex flex-col">
+            <AiChat game={selectedGame} />
+          </div>
+        )}
       </div>
     </section>
   );
